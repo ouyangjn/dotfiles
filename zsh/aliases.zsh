@@ -131,6 +131,30 @@ alias gbg='git bisect good'
 alias gbb='git bisect bad'
 alias gdmb='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 
+## Mercurial Aliases
+alias hca='hg ci --amend'
+alias hcm='hg ci -m'
+alias hcim='hg ci -m'
+alias hci='hg ci'
+alias hb='hg bookmark'
+alias hbr='hg bookmark -d'
+alias hd='hg diff'
+alias hi='vim .gitignore'
+alias hl='hg l'
+alias hlg='hg l'
+alias hlog='hg l'
+alias hr='hg revert'
+alias hrv='hg remote -v'
+alias hrr='hg remote rm'
+alias hrad='hg remote add'
+alias hsl='hg sl'
+alias hs='hg status'
+alias hsh='hg show'
+alias hshel='hg shelve -n "UnfinishedChanges"'
+alias hshw='hg show'
+alias hshow='hg show'
+alias hunshel='hg unshelve "UnfinishedChanges"'
+
 # Common shell functions
 alias less='less -r'
 alias tf='tail -f'
@@ -211,3 +235,6 @@ alias dbmu='spring rake db:migrate:up'
 
 # Homebrew
 alias brewu='brew update  && brew upgrade --all && brew cleanup && brew prune && brew doctor'
+
+# fasd
+alias v='f -e vim'
