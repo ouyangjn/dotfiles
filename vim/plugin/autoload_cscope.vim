@@ -31,7 +31,7 @@ endif
 function s:windowdir()
   if winbufnr(0) == -1
     let unislash = getcwd()
-  else 
+  else
     let unislash = fnamemodify(bufname(winbufnr(0)), ':p:h')
   endif
     return tr(unislash, '\', '/')
@@ -78,33 +78,33 @@ function s:Cycle_macros_menus()
     let s:menus_loaded = 1
     set csto=0
     set cst
-    silent! map <unique> <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-    silent! map <unique> <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-    silent! map <unique> <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
-    silent! map <unique> <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-    silent! map <unique> <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-    silent! map <unique> <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-    silent! map <unique> <C-\>f :cs find f <C-R>=expand("<cword>")<CR><CR>
-    silent! map <unique> <C-\>i :cs find i <C-R>=expand("<cword>")<CR><CR>
+    silent! map <unique> <C-\>s :cs find s <C-R>=<cword><CR><CR>
+    silent! map <unique> <C-\>g :cs find g <C-R>=<cword><CR><CR>
+    silent! map <unique> <C-\>d :cs find d <C-R>=<cword><CR><CR>
+    silent! map <unique> <C-\>c :cs find c <C-R>=<cword><CR><CR>
+    silent! map <unique> <C-\>t :cs find t <C-R>=<cword><CR><CR>
+    silent! map <unique> <C-\>e :cs find e <C-R>=<cword><CR><CR>
+    silent! map <unique> <C-\>f :cs find f <C-R>=<cword><CR><CR>
+    silent! map <unique> <C-\>i :cs find i <C-R>=<cword><CR><CR>
     if has("menu")
       nmenu &Cscope.Find.Symbol<Tab><c-\\>s
-        \ :cs find s <C-R>=expand("<cword>")<CR><CR>
+        \ :cs find s <C-R>=<cword><CR><CR>
       nmenu &Cscope.Find.Definition<Tab><c-\\>g
-        \ :cs find g <C-R>=expand("<cword>")<CR><CR>
+        \ :cs find g <C-R>=<cword><CR><CR>
       nmenu &Cscope.Find.Called<Tab><c-\\>d
-        \ :cs find d <C-R>=expand("<cword>")<CR><CR>
+        \ :cs find d <C-R>=<cword><CR><CR>
       nmenu &Cscope.Find.Calling<Tab><c-\\>c
-        \ :cs find c <C-R>=expand("<cword>")<CR><CR>
+        \ :cs find c <C-R>=<cword><CR><CR>
       nmenu &Cscope.Find.Assignment<Tab><c-\\>t
-        \ :cs find t <C-R>=expand("<cword>")<CR><CR>
+        \ :cs find t <C-R>=<cword><CR><CR>
       nmenu &Cscope.Find.Egrep<Tab><c-\\>e
-        \ :cs find e <C-R>=expand("<cword>")<CR><CR>
+        \ :cs find e <C-R>=<cword><CR><CR>
       nmenu &Cscope.Find.File<Tab><c-\\>f
-        \ :cs find f <C-R>=expand("<cword>")<CR><CR>
+        \ :cs find f <C-R>=<cword><CR><CR>
       nmenu &Cscope.Find.Including<Tab><c-\\>i
-        \ :cs find i <C-R>=expand("<cword>")<CR><CR>
-"      nmenu &Cscope.Add :cs add 
-"      nmenu &Cscope.Remove  :cs kill 
+        \ :cs find i <C-R>=<cword><CR><CR>
+"      nmenu &Cscope.Add :cs add
+"      nmenu &Cscope.Remove  :cs kill
       nmenu &Cscope.Reset :cs reset<cr>
       nmenu &Cscope.Show :cs show<cr>
       " Need to figure out how to do the add/remove. May end up writing
